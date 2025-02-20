@@ -1,0 +1,73 @@
+{
+    "daily_record": [
+        {
+            "id": 1,
+            "createOn": "2025-02-19T08:00:00Z",
+            "date": "2025-02-19",
+            "comment": "Worked on project X",
+            "isHoliday": false,
+            "time_frame_1": 2,
+            "time_frame_2": 3,
+            "time_frame_3": 1.5,
+            "time_frame_holidays": 0,
+            "total_time": 6.5,
+            "user_id": 1,
+            "start_time": "08:00",
+            "end_time": "14:30",
+            "monthly_record_id": 1
+        }
+    ],
+    "holiday": [
+        {
+            "id": 1,
+            "createOn": "2025-01-01T00:00:00Z",
+            "name": "New Year",
+            "holiday_date": "2025-01-01"
+        }
+    ],
+    "monthly_record": [
+        {
+            "id": 1,
+            "createOn": "2025-02-01T00:00:00Z",
+            "month": 2,
+            "year": 2025,
+            "current_status": "Pending",
+            "manager_id": 2,
+            "user_id": 1
+        }
+    ],
+    "record_history": [
+        {
+            "id": 1,
+            "createOn": "2025-02-19T10:00:00Z",
+            "editted_by": 2,
+            "comment": "Adjusted working hours",
+            "status": "Approved",
+            "monthly_record_id": 1
+        }
+    ],
+    "user": [
+        {
+            "id": 1,
+            "createdOn": "2024-01-15T12:00:00Z",
+            "user_number": "USR123",
+            "first_name": "John",
+            "last_name": "Doe",
+            "email": "john.doe@example.com",
+            "user_id": 1,
+            "is_manager": false,
+            "is_specialist": true
+        },
+        {
+            "id": 2,
+            "createdOn": "2023-05-20T09:30:00Z",
+            "user_number": "USR456",
+            "first_name": "Alice",
+            "last_name": "Smith",
+            "email": "alice.smith@example.com",
+            "user_id": 2,
+            "is_manager": true,
+            "is_specialist": false
+        }
+    ]
+}
