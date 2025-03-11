@@ -1,34 +1,30 @@
-import express from 'express';
-import fs from 'fs';
-import path from 'path';
-import cors from 'cors';
-import dotenv from 'dotenv';
+import { parseCsvToJson } from "./csvProcessor";
+import { addUser } from "./userService";
 
-dotenv.config();
-const app = express();
-const PORT = process.env.PORT || 3001;
-const dir  = '/api/data';
+const csvFilePath = "/Users/marcelallanos/Downloads/example_of_data_file.csv"
 
-app.use(cors());
-app.use(express.json());
-
-const dataFilePath = path.resolve(__dirname, "data.json");
-const readData = () => {
+const main = async () => {
     try {
-        const data = fs.readFileSync(dataFilePath, "utf8");
-        return JSON.parse(data) 
+        console.log("Procesando archivo CSV...");
+        const users = await parseCsvToJson(csvFilePath);
+        console.log(`Usuarios procesados: ${users.length}`);
+
+        for (const user of users) {
+            await addUser({
+                name: user.name,
+                email: user.email,
+                phone: user.phone ?? "00000000",
+                employee_no: user.employee_no,
+                address: user.new_address,
+                city: user.new_city,
+                zip: user.new_zip
+            });
+        }
+
+        console.log("Todos los usuarios fueron agregados.");
     } catch (error) {
-        console.log("Error al leer el archivo json", error);
-        return {error: "No se pudo leer el archivo de datos"}
+        console.error("Error en la ejecución:", error);
     }
-    
-}
+};
 
-app.get('/', (req, res) => {
-    const data = readData();
-    res.json(data)
-});
-
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
-})
+main();

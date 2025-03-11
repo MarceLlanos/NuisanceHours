@@ -1,0 +1,20 @@
+[
+  {
+    "email": "maros@jfmedier.dk",
+    "name": "Maria Maegaard Rosenqvist",
+    "employee_no": 1008745,
+    "new_manager": "Morten Baltzer Hansen",
+    "old_manager": null,
+    "new_address": "Nymarksgyden 31 - 5474 - Veflinge",
+    "new_street": "Nymarksgyden 31",
+    "new_city": "Veflinge",
+    "new_zip": "5474",
+    "old_address": null,
+    "new_work_address": "Blangstedsg�rdsvej 2, 5220 Odense S�",
+    "old_work_address": null,
+    "manager_email": "morha@jfmedier.dk",
+    "manager_phone": "60936823",
+    "phone": null,
+    "status": "Er k�rt: Ny medarbejder oprettet"
+  }
+]
